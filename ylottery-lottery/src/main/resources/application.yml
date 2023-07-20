@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: lottery
+server:
+  servlet:
+    context-path: /lottery
+  port: 10010
