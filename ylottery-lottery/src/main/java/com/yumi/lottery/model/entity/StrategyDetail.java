@@ -1,5 +1,6 @@
-package com.yumi.lottery.entity;
+package com.yumi.lottery.model.entity;
 
+import java.math.BigDecimal;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -18,16 +19,24 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class QueryHistory extends Model<QueryHistory> {
+public class StrategyDetail extends Model<StrategyDetail> {
 
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
-    private String random;
+    private Integer strategyId;
+
+    private Integer awardId;
+
+    private String awardName;
+
+    private Integer awardStock;
 
     private LocalDateTime createTime;
+
+    private BigDecimal awardRate;
 
 
     @Override

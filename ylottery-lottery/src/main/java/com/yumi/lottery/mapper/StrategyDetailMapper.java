@@ -1,6 +1,6 @@
 package com.yumi.lottery.mapper;
 
-import com.yumi.lottery.entity.QueryHistory;
+import com.yumi.lottery.model.entity.StrategyDetail;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author yumi
  * @since 2023-07-23
  */
-public interface QueryHistoryMapper extends BaseMapper<QueryHistory> {
+public interface StrategyDetailMapper extends BaseMapper<StrategyDetail> {
 
 }

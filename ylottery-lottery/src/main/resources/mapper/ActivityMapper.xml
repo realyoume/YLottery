@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yumi.lottery.mapper.ActivityMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.yumi.lottery.model.entity.Activity">
+        <id column="id" property="id" />
+        <result column="activity_name" property="activityName" />
+        <result column="activity_desc" property="activityDesc" />
+        <result column="activity_strategy_id" property="activityStrategyId" />
+        <result column="create_time" property="createTime" />
+        <result column="valid_time" property="validTime" />
+        <result column="expire_time" property="expireTime" />
+        <result column="stock" property="stock" />
+    </resultMap>
+
+</mapper>
