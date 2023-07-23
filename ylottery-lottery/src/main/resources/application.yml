@@ -1,6 +1,13 @@
 spring:
   application:
     name: lottery
+  datasource:
+    url: jdbc:mysql://192.168.200.200:3306/ylottery?useUnicode=true&useSSL=false&characterEncoding=utf-8
+    username: root
+    password: 123456
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
 server:
   servlet:
     context-path: /lottery
