@@ -1,9 +1,12 @@
 package com.yumi.lottery.api;
 
+import com.fasterxml.jackson.databind.annotation.JsonAppend;
+import com.yumi.lottery.model.dto.DrawResult;
+import com.yumi.lottery.service.ILotteryService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.time.LocalDateTime;
 
 /**
  * @version 1.0
@@ -14,15 +17,15 @@ import java.time.LocalDateTime;
 
 @RestController
 public class LotteryController {
+    @Autowired
+    private ILotteryService lotteryService;
 
+    @GetMapping("/draw")
+    public DrawResult draw(){
+        Integer userId = 1;
+        Integer activityId = 1;
 
-
-    @GetMapping("/process")
-    public String process(){
-        double random = Math.random();
-        String ans = "hi_" + random;
-
-        return ans;
+        return lotteryService.draw(userId, activityId);
     }
 }
 
