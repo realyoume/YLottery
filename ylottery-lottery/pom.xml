@@ -52,6 +52,11 @@
       <groupId>org.freemarker</groupId>
       <artifactId>freemarker</artifactId>
     </dependency>
+    <dependency>
+      <groupId>com.yumi</groupId>
+      <artifactId>ylottery-base</artifactId>
+      <version>1.0-SNAPSHOT</version>
+    </dependency>
   </dependencies>
 
 </project>

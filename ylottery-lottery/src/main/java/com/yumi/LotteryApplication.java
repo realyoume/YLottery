@@ -1,4 +1,4 @@
-package com.yumi.lottery;
+package com.yumi;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;

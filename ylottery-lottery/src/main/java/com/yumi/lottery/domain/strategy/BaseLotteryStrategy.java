@@ -1,6 +1,7 @@
 package com.yumi.lottery.domain.strategy;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.yumi.base.exception.YLotteryException;
 import com.yumi.lottery.common.enums.DrawResultStatus;
 import com.yumi.lottery.mapper.ActivityMapper;
 import com.yumi.lottery.mapper.StrategyDetailMapper;
@@ -12,11 +13,8 @@ import com.yumi.lottery.model.entity.StrategyDetail;
 import com.yumi.lottery.model.entity.UserActivity;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @version 1.0
@@ -83,7 +81,7 @@ public abstract class BaseLotteryStrategy implements ILotteryStrategy {
         Activity activity = activityMapper.selectById(activityId);
         if (!LocalDateTime.now().isAfter(activity.getValidTime())
                 || !LocalDateTime.now().isBefore(activity.getExpireTime())){
-            // 抛出异常
+            YLotteryException.cast("不在活动时间内");
         }
 
         // 用户是否持有该活动
@@ -92,12 +90,12 @@ public abstract class BaseLotteryStrategy implements ILotteryStrategy {
         UserActivity userActivity = userActivityMapper.selectOne(queryWrapper);
 
         if (userActivity == null){
-            // 抛出异常
+            YLotteryException.cast("无活动权限");
         }
 
         // 用户的抽奖次数是否大于0
         if (userActivity.getLotteryCount() <= 0){
-            // 抛出异常
+            YLotteryException.cast("抽奖次数为空");
         }
     }
 

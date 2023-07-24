@@ -1,6 +1,5 @@
 package com.yumi.lottery.api;
 
-import com.fasterxml.jackson.databind.annotation.JsonAppend;
 import com.yumi.lottery.model.dto.DrawResult;
 import com.yumi.lottery.service.ILotteryService;
 import org.springframework.beans.factory.annotation.Autowired;

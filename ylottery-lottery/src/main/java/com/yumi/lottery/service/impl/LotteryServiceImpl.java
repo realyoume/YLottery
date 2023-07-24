@@ -16,11 +16,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class LotteryServiceImpl implements ILotteryService {
     @Autowired
-    private ILotteryStrategy flexibleLotteryStrategy;
+    private ILotteryStrategy fixedLotteryStrategy;
 
     @Override
     public DrawResult draw(Integer userId, Integer activityId) {
-        return flexibleLotteryStrategy.draw(userId, activityId);
+        return fixedLotteryStrategy.draw(userId, activityId);
     }
 }
 

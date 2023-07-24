@@ -2,10 +2,9 @@ package com.yumi.lottery.domain.strategy.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.yumi.lottery.domain.strategy.BaseLotteryStrategy;
-import com.yumi.lottery.domain.strategy.ILotteryStrategy;
+import com.yumi.base.exception.YLotteryException;
 import com.yumi.lottery.mapper.ActivityMapper;
 import com.yumi.lottery.mapper.StrategyDetailMapper;
-import com.yumi.lottery.model.dto.DrawResult;
 import com.yumi.lottery.model.entity.Activity;
 import com.yumi.lottery.model.entity.StrategyDetail;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +14,6 @@ import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @version 1.0
@@ -55,7 +53,7 @@ public class FlexibleLotteryStrategy extends BaseLotteryStrategy {
         }
 
         if (totalRate == 0){
-            // 抛出异常
+            YLotteryException.cast("活动奖品已为空");
         }
 
         int cursor = 0;
