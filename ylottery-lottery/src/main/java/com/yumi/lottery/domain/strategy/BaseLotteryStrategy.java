@@ -11,6 +11,8 @@ import com.yumi.lottery.model.dto.DrawResult;
 import com.yumi.lottery.model.entity.Activity;
 import com.yumi.lottery.model.entity.StrategyDetail;
 import com.yumi.lottery.model.entity.UserActivity;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.time.LocalDateTime;
@@ -44,8 +46,12 @@ public abstract class BaseLotteryStrategy implements ILotteryStrategy {
      */
     private final int RATE_TUPLE_LENGTH = 128;
 
+    private static final Logger logger = LoggerFactory.getLogger(BaseLotteryStrategy.class);
+
     @Override
     public DrawResult draw(Integer userId, Integer activityId) {
+        logger.info("开始抽奖，用户ID：{}，活动ID：{}", userId, activityId);
+
         // 检查资格
         checkValid(userId, activityId);
 
