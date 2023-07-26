@@ -12,3 +12,6 @@ server:
   servlet:
     context-path: /lottery
   port: 10010
+
+lottery:
+  process-name: commonLotteryProcess

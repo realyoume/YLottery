@@ -1,9 +1,13 @@
 package com.yumi.lottery.service.impl;
 
+import com.yumi.lottery.domain.process.ILotteryProcess;
+import com.yumi.lottery.domain.process.ProcessFactory;
 import com.yumi.lottery.domain.strategy.ILotteryStrategy;
 import com.yumi.lottery.model.dto.DrawResult;
 import com.yumi.lottery.service.ILotteryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 /**
@@ -15,12 +19,15 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class LotteryServiceImpl implements ILotteryService {
+    @Value("${lottery.process-name}")
+    private String processName;
+
     @Autowired
-    private ILotteryStrategy fixedLotteryStrategy;
+    private ProcessFactory processFactory;
 
     @Override
     public DrawResult draw(Integer userId, Integer activityId) {
-        return fixedLotteryStrategy.draw(userId, activityId);
+        return processFactory.getLotteryProcess(processName).process(userId, activityId);
     }
 }
 

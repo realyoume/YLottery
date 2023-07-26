@@ -53,7 +53,8 @@ public abstract class BaseLotteryStrategy implements ILotteryStrategy {
         logger.info("开始抽奖，用户ID：{}，活动ID：{}", userId, activityId);
 
         // 检查资格
-        checkValid(userId, activityId);
+        // 废弃，检查放在领取活动时
+        //checkValid(userId, activityId);
 
         // 抽奖
         AwardInfo awardInfo = getAward(activityId);
