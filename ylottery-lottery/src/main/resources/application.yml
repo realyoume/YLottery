@@ -7,6 +7,15 @@ spring:
     password: 123456
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:
+    host: 192.168.200.200
+    port: 6379
+    password: redis
+    timeout: 1000
+    jedis:
+      pool:
+        max-active: 20
+        max-wait: -1
 
 server:
   servlet:
@@ -14,4 +23,4 @@ server:
   port: 10010
 
 lottery:
-  process-name: commonLotteryProcess
+  process-name: highConcurrencyLotteryProcess

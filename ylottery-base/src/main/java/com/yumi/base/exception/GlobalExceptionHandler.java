@@ -23,9 +23,8 @@ public class GlobalExceptionHandler {
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public RestErrorResult customException(YLotteryException e){
         String errMsg = e.getErrMsg();
-        RestErrorResult restErrorResult = new RestErrorResult(errMsg);
 
-        return restErrorResult;
+        return new RestErrorResult(errMsg);
     }
 
     @ResponseBody
@@ -33,8 +32,7 @@ public class GlobalExceptionHandler {
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public RestErrorResult exception(Exception e){
         String errMsg = e.getMessage();
-        RestErrorResult restErrorResult = new RestErrorResult(errMsg);
 
-        return restErrorResult;
+        return new RestErrorResult(errMsg);
     }
 }

@@ -1,6 +1,7 @@
 package com.yumi.base.exception;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 /**
  * @version 1.0
@@ -12,8 +13,11 @@ import java.io.Serializable;
 public class RestErrorResult implements Serializable {
     private String errMsg;
 
+    private LocalDateTime time;
+
     public RestErrorResult(String errMsg) {
         this.errMsg = errMsg;
+        this.time = LocalDateTime.now();
     }
 
     public String getErrMsg() {
@@ -22,6 +26,14 @@ public class RestErrorResult implements Serializable {
 
     public void setErrMsg(String errMsg) {
         this.errMsg = errMsg;
+    }
+
+    public LocalDateTime getTime() {
+        return time;
+    }
+
+    public void setTime(LocalDateTime time) {
+        this.time = time;
     }
 }
 

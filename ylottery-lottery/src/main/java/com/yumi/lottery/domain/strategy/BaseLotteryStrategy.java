@@ -50,7 +50,7 @@ public abstract class BaseLotteryStrategy implements ILotteryStrategy {
 
     @Override
     public DrawResult draw(Integer userId, Integer activityId) {
-        logger.info("开始抽奖，用户ID：{}，活动ID：{}", userId, activityId);
+        //logger.info("开始抽奖，用户ID：{}，活动ID：{}", userId, activityId);
 
         // 检查资格
         // 废弃，检查放在领取活动时
@@ -60,12 +60,13 @@ public abstract class BaseLotteryStrategy implements ILotteryStrategy {
         AwardInfo awardInfo = getAward(activityId);
 
         // 包装结果
-        return generateResult(activityId, awardInfo);
+        return generateResult(userId,activityId, awardInfo);
     }
 
-    protected DrawResult generateResult(Integer activityId, AwardInfo awardInfo) {
+    protected DrawResult generateResult(Integer userId,Integer activityId, AwardInfo awardInfo) {
         if (awardInfo == null) {
             return DrawResult.builder()
+                    .userId(userId)
                     .awardId(null)
                     .awardName(null)
                     .activityId(activityId)
@@ -74,6 +75,7 @@ public abstract class BaseLotteryStrategy implements ILotteryStrategy {
                     .build();
         }else {
             return DrawResult.builder()
+                    .userId(userId)
                     .awardId(awardInfo.getAwardId())
                     .awardName(awardInfo.getAwardName())
                     .activityId(activityId)

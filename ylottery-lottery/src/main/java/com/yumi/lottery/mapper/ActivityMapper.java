@@ -10,7 +10,7 @@ import org.apache.ibatis.annotations.Mapper;
  * </p>
  *
  * @author yumi
- * @since 2023-07-23
+ * @since 2023-07-26
  */
 @Mapper
 public interface ActivityMapper extends BaseMapper<Activity> {

@@ -33,15 +33,15 @@ public abstract class AbstractLotteryProcess implements ILotteryProcess {
         // 领取活动
         PickResult pickResult = doPickActivity(userId, activityId);
         if (PickResultStatus.FAILUER.getCode().equals(pickResult.getCode())){
-            logger.info("活动领取失败，用户ID：{}，活动ID：{}", userId, activityId);
-            YLotteryException.cast("下次一定中奖");
+           // logger.info("活动领取失败，用户ID：{}，活动ID：{}", userId, activityId);
+            YLotteryException.cast("手慢了，活动已经结束");
         }
 
         // 若成功领取，参加抽奖
         DrawResult drawResult = doLottery(userId, activityId);
         if (DrawResultStatus.FAILURE.getCode().equals(drawResult.getCode())){
             logger.info("未抽中奖品，用户ID：{}，活动ID：{}", userId, activityId);
-            YLotteryException.cast("下次一定中奖");
+            YLotteryException.cast("真可惜，未抽中奖品");
         }
 
         // 发送消息，记录抽奖结果
@@ -62,6 +62,7 @@ public abstract class AbstractLotteryProcess implements ILotteryProcess {
      */
     protected void sendSuccessMsg(DrawResult drawResult){
         // TODO 实现消息队列
+        logger.info("恭喜中奖，用户ID：{}，奖品：{}",drawResult.getUserId(), drawResult.getAwardName());
     }
 }
 

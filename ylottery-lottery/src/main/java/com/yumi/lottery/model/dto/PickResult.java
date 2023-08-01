@@ -1,7 +1,9 @@
 package com.yumi.lottery.model.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * @version 1.0
@@ -12,6 +14,8 @@ import lombok.Data;
 
 @Data
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class PickResult {
 
     private Integer userId;
@@ -19,6 +23,7 @@ public class PickResult {
     private Integer activityId;
 
     private String code;
+
 }
 
 

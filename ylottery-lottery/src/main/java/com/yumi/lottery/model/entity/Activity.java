@@ -14,7 +14,7 @@ import lombok.EqualsAndHashCode;
  * </p>
  *
  * @author yumi
- * @since 2023-07-23
+ * @since 2023-07-26
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -41,9 +41,14 @@ public class Activity extends Model<Activity> {
     private LocalDateTime expireTime;
 
     /**
-     * 活动库存
+     * 活动容量
      */
-    private Integer stock;
+    private Integer capacity;
+
+    /**
+     * 0 未开始，1 进行中，2 活动售空，3 活动过期
+     */
+    private String status;
 
 
     @Override

@@ -11,7 +11,8 @@
         <result column="create_time" property="createTime" />
         <result column="valid_time" property="validTime" />
         <result column="expire_time" property="expireTime" />
-        <result column="stock" property="stock" />
+        <result column="capacity" property="capacity" />
+        <result column="status" property="status" />
     </resultMap>
 
 </mapper>

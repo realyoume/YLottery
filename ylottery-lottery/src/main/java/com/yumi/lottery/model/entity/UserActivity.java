@@ -3,6 +3,8 @@ package com.yumi.lottery.model.entity;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import java.time.LocalDateTime;
 import java.io.Serializable;
+
+import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -15,6 +17,7 @@ import lombok.EqualsAndHashCode;
  * @since 2023-07-23
  */
 @Data
+@Builder
 @EqualsAndHashCode(callSuper = false)
 public class UserActivity extends Model<UserActivity> {
 
