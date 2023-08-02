@@ -1,12 +1,10 @@
-package com.yumi.lottery.model.entity;
+package com.yumi.award.model.entity;
 
 import com.baomidou.mybatisplus.extension.activerecord.Model;
-import java.time.LocalDateTime;
-import java.io.Serializable;
+import lombok.*;
 
-import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import java.io.Serializable;
+import java.time.LocalDateTime;
 
 /**
  * <p>
@@ -19,6 +17,8 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class UserActivity extends Model<UserActivity> {
 
     private static final long serialVersionUID = 1L;

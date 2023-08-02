@@ -1,10 +1,7 @@
 package com.yumi.lottery.model.entity;
 
 import com.baomidou.mybatisplus.extension.activerecord.Model;
-import java.time.LocalDateTime;
 import java.io.Serializable;
-
-import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -14,12 +11,11 @@ import lombok.EqualsAndHashCode;
  * </p>
  *
  * @author yumi
- * @since 2023-08-01
+ * @since 2023-08-02
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-@Builder
-public class UserActivity extends Model<UserActivity> {
+public class UserAward extends Model<UserAward> {
 
     private static final long serialVersionUID = 1L;
 
@@ -27,16 +23,11 @@ public class UserActivity extends Model<UserActivity> {
 
     private Integer userId;
 
-    private Integer activityId;
+    private String userActivityId;
 
-    private Integer lotteryCount;
+    private Integer awardId;
 
-    /**
-     * 0 有效，1 过期
-     */
-    private Integer expired;
-
-    private LocalDateTime createTime;
+    private Integer awardType;
 
 
     @Override

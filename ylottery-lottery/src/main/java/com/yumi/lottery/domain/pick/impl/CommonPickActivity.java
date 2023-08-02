@@ -45,16 +45,6 @@ public class CommonPickActivity implements IPickActivity {
 
         activityMapper.updateById(activity);
 
-        UserActivity userActivity = UserActivity.builder()
-                .id(userId + "-" + activityId + "-" + System.currentTimeMillis())
-                .activityId(activityId)
-                .userId(userId)
-                .createTime(LocalDateTime.now())
-                .lotteryCount(1)
-                .build();
-
-        userActivityMapper.insert(userActivity);
-
         PickResult pickResult = PickResult.builder()
                 .activityId(activityId)
                 .userId(userId)

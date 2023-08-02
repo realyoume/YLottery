@@ -1,7 +1,8 @@
-package com.yumi.lottery.mapper;
+package com.yumi.award.mapper;
 
-import com.yumi.lottery.model.entity.UserActivity;
+
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.yumi.award.model.entity.UserActivity;
 import org.apache.ibatis.annotations.Mapper;
 
 /**

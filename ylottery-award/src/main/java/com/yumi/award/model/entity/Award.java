@@ -1,40 +1,38 @@
-package com.yumi.lottery.model.entity;
+package com.yumi.award.model.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
+import com.baomidou.mybatisplus.annotation.TableId;
 import java.time.LocalDateTime;
 import java.io.Serializable;
-
-import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author yumi
- * @since 2023-08-01
+ * @since 2023-07-23
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-@Builder
-public class UserActivity extends Model<UserActivity> {
+public class Award extends Model<Award> {
 
     private static final long serialVersionUID = 1L;
 
-    private String id;
+    @TableId(value = "id", type = IdType.AUTO)
+    private Integer id;
 
-    private Integer userId;
+    private String awardName;
 
-    private Integer activityId;
-
-    private Integer lotteryCount;
+    private String awardDesc;
 
     /**
-     * 0 有效，1 过期
+     * 0 实物奖品，1 优惠卷，2 体验卡
      */
-    private Integer expired;
+    private Integer awardType;
 
     private LocalDateTime createTime;
 

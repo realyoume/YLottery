@@ -1,6 +1,6 @@
 package com.yumi.lottery.mapper;
 
-import com.yumi.lottery.model.entity.UserActivity;
+import com.yumi.lottery.model.entity.UserAward;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -10,9 +10,9 @@ import org.apache.ibatis.annotations.Mapper;
  * </p>
  *
  * @author yumi
- * @since 2023-08-01
+ * @since 2023-08-02
  */
 @Mapper
-public interface UserActivityMapper extends BaseMapper<UserActivity> {
+public interface UserAwardMapper extends BaseMapper<UserAward> {
 
 }
