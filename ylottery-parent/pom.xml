@@ -13,6 +13,7 @@
     <module>../ylottery-base</module>
     <module>../ylottery-lottery</module>
     <module>../ylottery-award</module>
+    <module>../ylottery-activity</module>
   </modules>
 
   <properties>
