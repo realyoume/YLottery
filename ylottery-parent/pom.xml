@@ -15,6 +15,7 @@
     <module>../ylottery-award</module>
     <module>../ylottery-activity</module>
     <module>../ylottery-media</module>
+    <module>../ylottery-gateway</module>
   </modules>
 
   <properties>

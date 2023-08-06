@@ -1,13 +1,9 @@
 spring:
   application:
-    name: lottery
+    name: gateway
   profiles:
     active: dev
   cloud:
-    config:
-      override-none: true
-      allow-override: true
-      override-system-properties: false
     nacos:
       server-addr: 192.168.200.200:8848
       discovery:
@@ -18,4 +14,3 @@ spring:
         namespace: lottery
         group: ylottery-project
         refresh-enabled: true
-

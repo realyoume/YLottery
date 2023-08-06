@@ -72,21 +72,6 @@
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-lang3</artifactId>
     </dependency>
-    <!--cloud的基础环境包-->
-    <dependency>
-      <groupId>org.springframework.cloud</groupId>
-      <artifactId>spring-cloud-context</artifactId>
-    </dependency>
-    <!--    nacos 服务发现-->
-    <dependency>
-      <groupId>com.alibaba.cloud</groupId>
-      <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-    </dependency>
-    <!--    nacos 配置管理-->
-    <dependency>
-      <groupId>com.alibaba.cloud</groupId>
-      <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
-    </dependency>
   </dependencies>
 
 </project>
