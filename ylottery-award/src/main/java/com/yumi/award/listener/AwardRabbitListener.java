@@ -32,7 +32,7 @@ import java.time.LocalDateTime;
  * @date: 2023/8/1 21:02
  */
 
-@Component
+//@Component
 public class AwardRabbitListener {
     @Autowired
     private AwardMapper awardMapper;

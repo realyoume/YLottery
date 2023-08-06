@@ -14,6 +14,7 @@
     <module>../ylottery-lottery</module>
     <module>../ylottery-award</module>
     <module>../ylottery-activity</module>
+    <module>../ylottery-media</module>
   </modules>
 
   <properties>
@@ -27,6 +28,20 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-dependencies</artifactId>
         <version>2.3.7.RELEASE</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-dependencies</artifactId>
+        <version>Hoxton.SR9</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.alibaba.cloud</groupId>
+        <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+        <version>2.2.6.RELEASE</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -64,6 +79,16 @@
         <groupId>cn.hutool</groupId>
         <artifactId>hutool-all</artifactId>
         <version>5.5.0</version>
+      </dependency>
+      <dependency>
+        <groupId>com.xuxueli</groupId>
+        <artifactId>xxl-job-core</artifactId>
+        <version>2.2.0</version>
+      </dependency>
+      <dependency>
+        <groupId>io.minio</groupId>
+        <artifactId>minio</artifactId>
+        <version>8.4.3</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
